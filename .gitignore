@@ -222,3 +222,13 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+
+# Internal spec-driven-development process artifacts — kept local only.
+# These document the build process (spec/plan/tasks, assignment brief, SDD
+# scaffolding) and are not part of the graded academic deliverable, so they
+# are excluded from the repository examiners will review.
+docs/
+specs/
+.specify/
+AGENTS.md
+.DS_Store

@@ -1,0 +1,38 @@
+[project]
+name = "tiered-cinnamon-forecast"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "pramodyasahane", email = "pramodyasahan.edu@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "holidays>=0.99",
+    "jupyter>=1.1.1",
+    "lightgbm>=4.6.0",
+    "matplotlib>=3.11.0",
+    "nbconvert>=7.17.1",
+    "numpy>=2.4.6",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.3",
+    "pyarrow>=24.0.0",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+    "shap>=0.46",
+    "statsforecast>=1.7.8",
+    "statsmodels>=0.14.6",
+    "xgboost>=3.3.0",
+]
+
+[project.scripts]
+tiered-cinnamon-forecast = "tiered_cinnamon_forecast:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

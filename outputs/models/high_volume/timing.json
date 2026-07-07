@@ -1,0 +1,11 @@
+{
+  "lightgbm_train_seconds":0.8868541669,
+  "lightgbm_best_iteration":140.0,
+  "xgboost_train_seconds":1.206327542,
+  "xgboost_best_iteration":77.0,
+  "lightgbm_final_train_seconds":0.5749707092,
+  "xgboost_final_train_seconds":0.7340389579,
+  "lightgbm_inference_seconds":0.081459,
+  "xgboost_inference_seconds":0.0348109589,
+  "seasonal_naive_inference_seconds":0.0025475421
+}

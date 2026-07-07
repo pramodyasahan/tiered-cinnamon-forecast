@@ -1,0 +1,73 @@
+ProductID,Country,forecast_week,WeekStart,predicted_Sales_Qty,method
+13766-020,AUSTRALIA,1,2025-09-22,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,2,2025-09-29,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,3,2025-10-06,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,4,2025-10-13,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,5,2025-10-20,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,6,2025-10-27,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,7,2025-11-03,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,8,2025-11-10,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,9,2025-11-17,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,10,2025-11-24,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,11,2025-12-01,25.25,rolling_mean_last_4_weeks
+13766-020,AUSTRALIA,12,2025-12-08,25.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,1,2025-09-22,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,2,2025-09-29,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,3,2025-10-06,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,4,2025-10-13,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,5,2025-10-20,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,6,2025-10-27,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,7,2025-11-03,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,8,2025-11-10,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,9,2025-11-17,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,10,2025-11-24,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,11,2025-12-01,50.25,rolling_mean_last_4_weeks
+13766-020,CYPRUS,12,2025-12-08,50.25,rolling_mean_last_4_weeks
+16576-029,EMIRATES,1,2025-09-22,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,2,2025-09-29,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,3,2025-10-06,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,4,2025-10-13,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,5,2025-10-20,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,6,2025-10-27,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,7,2025-11-03,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,8,2025-11-10,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,9,2025-11-17,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,10,2025-11-24,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,11,2025-12-01,94.0,rolling_mean_last_4_weeks
+16576-029,EMIRATES,12,2025-12-08,94.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,1,2025-09-22,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,2,2025-09-29,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,3,2025-10-06,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,4,2025-10-13,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,5,2025-10-20,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,6,2025-10-27,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,7,2025-11-03,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,8,2025-11-10,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,9,2025-11-17,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,10,2025-11-24,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,11,2025-12-01,5.0,rolling_mean_last_4_weeks
+16576-029,SRI LANKA,12,2025-12-08,5.0,rolling_mean_last_4_weeks
+89574-017,POLAND,1,2025-09-22,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,2,2025-09-29,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,3,2025-10-06,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,4,2025-10-13,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,5,2025-10-20,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,6,2025-10-27,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,7,2025-11-03,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,8,2025-11-10,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,9,2025-11-17,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,10,2025-11-24,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,11,2025-12-01,3746.0,rolling_mean_last_4_weeks
+89574-017,POLAND,12,2025-12-08,3746.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,1,2025-09-22,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,2,2025-09-29,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,3,2025-10-06,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,4,2025-10-13,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,5,2025-10-20,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,6,2025-10-27,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,7,2025-11-03,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,8,2025-11-10,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,9,2025-11-17,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,10,2025-11-24,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,11,2025-12-01,151.0,rolling_mean_last_4_weeks
+89574-017,SPAIN,12,2025-12-08,151.0,rolling_mean_last_4_weeks

@@ -4,6 +4,9 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.logging_utils import get_logger, log_metrics, stage
+
+LOGGER = get_logger(__name__)
 
 CLEANED_PATH = Path("data/processed/cleaned.parquet")
 SCOPED_PATH = Path("data/processed/scoped.parquet")
@@ -75,13 +78,19 @@ def scope_products(cleaned_path: Path = CLEANED_PATH, output_path: Path | None =
 
 
 def main() -> None:
-    scoped = scope_products()
-    print(f"cleaned_rows={scoped.attrs['cleaned_rows']}")
-    print(f"excluded_rows={scoped.attrs['excluded_rows']}")
-    print(f"scoped_rows={scoped.attrs['scoped_rows']}")
-    print(f"cleaned_products={scoped.attrs['cleaned_products']}")
-    print(f"scoped_products={scoped.attrs['scoped_products']}")
-    print(f"output={SCOPED_PATH}")
+    with stage(LOGGER, "Stage 3: scope_products()"):
+        scoped = scope_products()
+        log_metrics(
+            LOGGER,
+            {
+                "cleaned_rows": scoped.attrs["cleaned_rows"],
+                "excluded_rows": scoped.attrs["excluded_rows"],
+                "scoped_rows": scoped.attrs["scoped_rows"],
+                "cleaned_products": scoped.attrs["cleaned_products"],
+                "scoped_products": scoped.attrs["scoped_products"],
+                "output": SCOPED_PATH,
+            },
+        )
 
 
 if __name__ == "__main__":

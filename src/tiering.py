@@ -4,6 +4,9 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.logging_utils import get_logger, log_metrics, stage
+
+LOGGER = get_logger(__name__)
 
 FEATURED_PATH = Path("data/processed/featured.parquet")
 TIERS_PATH = Path("data/processed/tiers.parquet")
@@ -53,13 +56,19 @@ def tier_products(featured_path: Path = FEATURED_PATH, output_path: Path | None 
 
 
 def main() -> None:
-    tiers = tier_products()
-    print(f"threshold_transactions={HIGH_VOLUME_TRANSACTION_THRESHOLD}")
-    print(f"products={tiers.attrs['products']}")
-    print(f"high_volume_products={tiers.attrs['high_volume_products']}")
-    print(f"sparse_products={tiers.attrs['sparse_products']}")
-    print(f"high_volume_volume_share={tiers.attrs['high_volume_volume_share']:.4f}")
-    print(f"output={TIERS_PATH}")
+    with stage(LOGGER, "Stage 6: tier_products()"):
+        tiers = tier_products()
+        log_metrics(
+            LOGGER,
+            {
+                "threshold_transactions": HIGH_VOLUME_TRANSACTION_THRESHOLD,
+                "products": tiers.attrs["products"],
+                "high_volume_products": tiers.attrs["high_volume_products"],
+                "sparse_products": tiers.attrs["sparse_products"],
+                "high_volume_volume_share": tiers.attrs["high_volume_volume_share"],
+                "output": TIERS_PATH,
+            },
+        )
 
 
 if __name__ == "__main__":

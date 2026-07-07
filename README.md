@@ -27,6 +27,7 @@ whole thing with `make`, or invoke a single stage directly with `uv run`.
 
 ```bash
 make pipeline      # clean -> scope -> weekly aggregate -> features -> tiering
+make all           # full end-to-end: pipeline -> test -> forecast -> report -> notebooks
 ```
 
 | Stage | Command | Output |
@@ -36,9 +37,15 @@ make pipeline      # clean -> scope -> weekly aggregate -> features -> tiering
 | Weekly aggregate | `make weekly` | `data/processed/weekly.parquet` |
 | Feature engineering | `make features` | `data/processed/featured.parquet` |
 | Tiering | `make tiering` | `data/processed/tiers.parquet` |
+| Forecast | `make forecast` | `outputs/forecasts/forecast_12wk.csv`, `outputs/metrics/model_comparison.csv` |
+| Report figures | `make report` | `outputs/figures/*.png` |
+| Notebooks | `make notebooks` | executed in place under `notebooks/` |
 
-Run `make help` for the full list of targets, including forecasting and
-report-generation targets as they come online.
+Run `make help` for the full list of targets.
+
+For the full runbook, assignment summary, next implementation steps, report
+outline, presentation outline, and speaking script draft, see
+[`docs/run-and-submission-guide.md`](docs/run-and-submission-guide.md).
 
 ## Tests
 

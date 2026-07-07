@@ -6,6 +6,9 @@ import holidays
 import numpy as np
 import pandas as pd
 
+from src.logging_utils import get_logger, log_metrics, stage
+
+LOGGER = get_logger(__name__)
 
 WEEKLY_PATH = Path("data/processed/weekly.parquet")
 SCOPED_PATH = Path("data/processed/scoped.parquet")
@@ -188,13 +191,19 @@ def build_feature_set(
 
 
 def main() -> None:
-    featured = build_feature_set()
-    print(f"weekly_rows={featured.attrs['weekly_rows']}")
-    print(f"featured_rows={featured.attrs['featured_rows']}")
-    print(f"products={featured.attrs['products']}")
-    print(f"weeks={featured.attrs['weeks']}")
-    print(f"zero_sales_share={featured.attrs['zero_sales_share']:.4f}")
-    print(f"output={FEATURED_PATH}")
+    with stage(LOGGER, "Stage 5: build_feature_set()"):
+        featured = build_feature_set()
+        log_metrics(
+            LOGGER,
+            {
+                "weekly_rows": featured.attrs["weekly_rows"],
+                "featured_rows": featured.attrs["featured_rows"],
+                "products": featured.attrs["products"],
+                "weeks": featured.attrs["weeks"],
+                "zero_sales_share": featured.attrs["zero_sales_share"],
+                "output": FEATURED_PATH,
+            },
+        )
 
 
 if __name__ == "__main__":

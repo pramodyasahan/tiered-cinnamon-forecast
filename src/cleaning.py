@@ -4,6 +4,9 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.logging_utils import get_logger, log_metrics, stage
+
+LOGGER = get_logger(__name__)
 
 RAW_PATH = Path("data/raw/Cinnamon_export_sales.xlsx")
 CLEANED_PATH = Path("data/processed/cleaned.parquet")
@@ -176,23 +179,37 @@ def aggregate_weekly(scoped_path: Path = SCOPED_PATH, output_path: Path | None =
 
 
 def main() -> None:
-    cleaned = clean_transactions()
-    print(f"raw_rows={cleaned.attrs['raw_rows']}")
-    print(f"artifact_rows_dropped={cleaned.attrs['artifact_rows_dropped']}")
-    print(f"duplicate_rows_dropped={cleaned.attrs['duplicate_rows_dropped']}")
-    print(f"missing_order_dates_imputed={cleaned.attrs['missing_order_dates_imputed']}")
-    print(f"median_lead_days={cleaned.attrs['median_lead_days']}")
-    print(f"negative_lead_rate={cleaned.attrs['negative_lead_rate']:.4f}")
-    print(f"cleaned_rows={len(cleaned)}")
-    print(f"output={CLEANED_PATH}")
+    with stage(LOGGER, "Stage 2: clean_transactions()"):
+        cleaned = clean_transactions()
+        log_metrics(
+            LOGGER,
+            {
+                "raw_rows": cleaned.attrs["raw_rows"],
+                "artifact_rows_dropped": cleaned.attrs["artifact_rows_dropped"],
+                "duplicate_rows_dropped": cleaned.attrs["duplicate_rows_dropped"],
+                "missing_order_dates_imputed": cleaned.attrs["missing_order_dates_imputed"],
+                "median_lead_days": cleaned.attrs["median_lead_days"],
+                "negative_lead_rate": cleaned.attrs["negative_lead_rate"],
+                "cleaned_rows": len(cleaned),
+                "output": CLEANED_PATH,
+            },
+        )
 
     if SCOPED_PATH.exists():
-        weekly = aggregate_weekly()
-        print(f"scoped_rows={weekly.attrs['scoped_rows']}")
-        print(f"weekly_rows={weekly.attrs['weekly_rows']}")
-        print(f"returns_exceeded_sales_weeks={weekly.attrs['returns_exceeded_sales_weeks']}")
-        print(f"week_range={weekly.attrs['min_week']}..{weekly.attrs['max_week']}")
-        print(f"output={WEEKLY_PATH}")
+        with stage(LOGGER, "Stage 4: aggregate_weekly()"):
+            weekly = aggregate_weekly()
+            log_metrics(
+                LOGGER,
+                {
+                    "scoped_rows": weekly.attrs["scoped_rows"],
+                    "weekly_rows": weekly.attrs["weekly_rows"],
+                    "returns_exceeded_sales_weeks": weekly.attrs["returns_exceeded_sales_weeks"],
+                    "week_range": f"{weekly.attrs['min_week']}..{weekly.attrs['max_week']}",
+                    "output": WEEKLY_PATH,
+                },
+            )
+    else:
+        LOGGER.info("Skipping Stage 4 (aggregate_weekly): %s not found yet.", SCOPED_PATH)
 
 
 if __name__ == "__main__":

@@ -42,6 +42,11 @@ transparency requirements, and the project's own engineering constitution).
 - The raw workbook `Cinnamon_export_sales.xlsx`, placed at
   `data/raw/Cinnamon_export_sales.xlsx` (not committed to version control)
 
+Dataset access note: the code is reproducible, but a fresh clone cannot run
+the data pipeline unless a compatible workbook is placed at that path. See
+[`docs/DATA_ACCESS.md`](docs/DATA_ACCESS.md) for the required columns and
+the reason the transaction-level workbook is not bundled by default.
+
 ## Setup
 
 ```bash
@@ -75,6 +80,9 @@ Run `make help` for the full list of targets.
 For the full runbook, assignment summary, next implementation steps, report
 outline, presentation outline, and speaking script draft, see
 [`docs/run-and-submission-guide.md`](docs/run-and-submission-guide.md).
+
+For a reviewer-oriented walkthrough of the methodology, outputs, and modeling
+decisions, see [`docs/PROJECT_EXPLAINED.md`](docs/PROJECT_EXPLAINED.md).
 
 ## Modeling approach
 

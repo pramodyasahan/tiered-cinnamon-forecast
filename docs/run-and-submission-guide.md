@@ -115,11 +115,6 @@ outputs/                                  # generated, gitignored
   forecasts/forecast_12wk.csv
   figures/*.png
 
-specs/
-  001-cinnamon-export-forecasting/        # main project spec/plan/tasks
-  002-feature-engineering-fixes/          # feature-correctness bug-fix spec
-  003-complete-forecasting-submission/    # models/backtest/report/notebooks spec
-
 docs/
   assignment/                             # original assignment brief
   submission/                             # final report/slides/script, gitignored

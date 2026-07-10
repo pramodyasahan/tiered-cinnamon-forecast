@@ -220,6 +220,7 @@ __marimo__/
 # Tiered Cinnamon Forecast project specific
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/README.md
 data/processed/*
 !data/processed/.gitkeep
 
@@ -229,6 +230,8 @@ data/processed/*
 # are excluded from the repository examiners will review.
 docs/*
 !docs/run-and-submission-guide.md
+!docs/PROJECT_EXPLAINED.md
+!docs/DATA_ACCESS.md
 specs/
 .specify/
 AGENTS.md
